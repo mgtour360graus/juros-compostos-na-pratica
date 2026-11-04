@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Guia interativo escolar sobre juros compostos: fórmula, exemplos, simulador, comparação com juros simples, dívidas, investimentos e fontes oficiais."
+    />
+    <meta name="theme-color" content="#00585b" />
+    <meta property="og:title" content="Juros Compostos na Prática" />
+    <meta
+      property="og:description"
+      content="Entenda como o dinheiro muda com o tempo e experimente um simulador passo a passo."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://juros-compostos-na-pratica.espa-o-de-tr-8663.chatgpt.site"
+    />
+    <link
+      rel="canonical"
+      href="https://juros-compostos-na-pratica.espa-o-de-tr-8663.chatgpt.site"
+    />
+    <title>Juros Compostos na Prática</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header" id="topo">
+      <div class="header-inner">
+        <a class="brand" href="#topo" aria-label="Juros Compostos na Prática - início">
+          <span class="brand-spark" aria-hidden="true">✦</span>
+          <span>
+            <strong>Juros Compostos</strong>
+            <small>Pesquisa de Matemática · 1º Ano C</small>
+          </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+          <span class="sr-only">Abrir menu</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <nav id="menu-principal" aria-label="Navegação principal">
+          <a href="#entenda">Entenda</a>
+          <a href="#exemplo">Exemplo</a>
+          <a href="#laboratorio">Simulador</a>
+          <a href="#decisoes">Na prática</a>
+          <a href="#fontes">Fontes</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero section-shell" aria-labelledby="titulo-principal">
+        <div class="hero-copy">
+          <p class="eyebrow">Matemática no nosso dia a dia</p>
+          <h1 id="titulo-principal">O tempo faz toda a diferença</h1>
+          <p class="hero-lead">
+            Juros compostos são os juros calculados sobre o valor inicial <em>e</em> sobre os juros
+            acumulados. É por isso que, com o passar do tempo, a curva cresce cada vez mais rápido.
+            <a class="citation" href="#fonte-bcb-caderno" aria-label="Consultar fonte 1">[1]</a>
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#laboratorio">Experimentar o simulador</a>
+            <a class="button button-ghost" href="#exemplo">Ver o cálculo passo a passo</a>
+          </div>
+          <p class="hand-note">Pequenas escolhas podem gerar grandes mudanças!</p>
+        </div>
+
+        <div class="hero-poster" aria-label="Ilustração comparando juros simples e compostos">
+          <div class="poster-heading">
+            <span>Valor do dinheiro</span>
+            <strong>cresce com o tempo</strong>
+          </div>
+          <svg class="hero-chart" viewBox="0 0 560 330" role="img" aria-labelledby="grafico-hero-titulo grafico-hero-desc">
+            <title id="grafico-hero-titulo">Comparação visual entre juros simples e compostos</title>
+            <desc id="grafico-hero-desc">A linha de juros simples cresce de forma constante, enquanto a curva de juros compostos acelera.</desc>
+            <g class="chart-grid">
+              <path d="M58 24V286M148 24V286M238 24V286M328 24V286M418 24V286M508 24V286" />
+              <path d="M58 286H520M58 220H520M58 154H520M58 88H520M58 24H520" />
+            </g>
+            <path class="axis" d="M58 18V286H526" />
+            <path class="simple-line" d="M58 278L508 208" />
+            <path class="compound-line" d="M58 278C168 268 280 244 360 190C428 145 476 83 508 32" />
+            <g class="simple-dots">
+              <circle cx="58" cy="278" r="6" /><circle cx="148" cy="264" r="6" /><circle cx="238" cy="250" r="6" /><circle cx="328" cy="236" r="6" /><circle cx="418" cy="222" r="6" /><circle cx="508" cy="208" r="6" />
+            </g>
+            <g class="compound-dots">
+              <circle cx="58" cy="278" r="6" /><circle cx="148" cy="267" r="6" /><circle cx="238" cy="244" r="6" /><circle cx="328" cy="211" r="6" /><circle cx="418" cy="149" r="6" /><circle cx="508" cy="32" r="6" />
+            </g>
+            <text class="label compound-label" x="340" y="128">Juros compostos</text>
+            <text class="label simple-label" x="374" y="246">Juros simples</text>
+            <text class="axis-label" x="384" y="318">tempo →</text>
+          </svg>
+          <div class="poster-formula" aria-label="Fórmula do montante em juros compostos">
+            <span>M</span> = <span>C</span> × (1 + <span>i</span>)<sup>t</sup>
+          </div>
+          <span class="poster-doodle doodle-one" aria-hidden="true">✦</span>
+          <span class="poster-doodle doodle-two" aria-hidden="true">↗</span>
+        </div>
+      </section>
+
+      <section class="journey-strip" aria-label="Roteiro de aprendizagem">
+        <div class="section-shell journey-grid">
+          <span><b>1</b> Descubra a ideia</span>
+          <span><b>2</b> Entenda a fórmula</span>
+          <span><b>3</b> Simule cenários</span>
+          <span><b>4</b> Tome decisões</span>
+        </div>
+      </section>
+
+      <section class="content-section section-shell" id="entenda" aria-labelledby="titulo-entenda">
+        <div class="section-heading">
+          <p class="eyebrow">Comece pela ideia</p>
+          <h2 id="titulo-entenda">O que realmente acontece a cada período?</h2>
+          <p>
+            O saldo do fim de um período vira a base do período seguinte. Assim, o juro novo também
+            incide sobre os juros anteriores — o chamado “juro sobre juro”.
+            <a class="citation" href="#fonte-bcb-olitef" aria-label="Consultar fonte 2">[2]</a>
+          </p>
+        </div>
+
+        <div class="formula-layout">
+          <article class="formula-card">
+            <p class="card-kicker">A fórmula principal</p>
+            <div class="formula-large" aria-label="M igual a C vezes um mais i elevado a t">
+              <span data-formula="montante">M</span> = <span data-formula="capital">C</span> ×
+              (1 + <span data-formula="taxa">i</span>)<sup data-formula="tempo">t</sup>
+            </div>
+            <p class="formula-caption">Passe o cursor ou toque em cada símbolo para revisar seu significado.</p>
+          </article>
+
+          <div class="formula-parts" aria-label="Significados dos símbolos da fórmula">
+            <button class="part-card is-active" type="button" data-part="montante">
+              <span>M</span>
+              <strong>Montante</strong>
+              <small>valor final: capital + juros</small>
+            </button>
+            <button class="part-card" type="button" data-part="capital">
+              <span>C</span>
+              <strong>Capital</strong>
+              <small>valor inicial da operação</small>
+            </button>
+            <button class="part-card" type="button" data-part="taxa">
+              <span>i</span>
+              <strong>Taxa</strong>
+              <small>percentual aplicado por período</small>
+            </button>
+            <button class="part-card" type="button" data-part="tempo">
+              <span>t</span>
+              <strong>Tempo</strong>
+              <small>quantidade de períodos</small>
+            </button>
+          </div>
+        </div>
+
+        <div class="unit-alert" role="note">
+          <div class="unit-icon" aria-hidden="true">↔</div>
+          <div>
+            <strong>Taxa e tempo precisam falar a mesma língua.</strong>
+            <p>Taxa ao mês combina com número de meses; taxa ao ano combina com número de anos.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="example-section" id="exemplo" aria-labelledby="titulo-exemplo">
+        <div class="section-shell">
+          <div class="section-heading section-heading-light">
+            <p class="eyebrow">Veja o cálculo acontecer</p>
+            <h2 id="titulo-exemplo">R$ 100 a 10% ao mês por dois meses</h2>
+            <p>Este é um exemplo matemático deliberadamente simples — não uma promessa de rendimento.</p>
+          </div>
+
+          <div class="timeline" aria-label="Evolução do exemplo mês a mês">
+            <article class="timeline-card">
+              <span class="timeline-number">0</span>
+              <p class="timeline-label">Início</p>
+              <strong>R$ 100,00</strong>
+              <small>capital inicial</small>
+            </article>
+            <span class="timeline-arrow" aria-hidden="true">+ 10%</span>
+            <article class="timeline-card">
+              <span class="timeline-number">1</span>
+              <p class="timeline-label">1º mês</p>
+              <strong>R$ 110,00</strong>
+              <small>R$ 100 + R$ 10</small>
+            </article>
+            <span class="timeline-arrow" aria-hidden="true">+ 10%</span>
+            <article class="timeline-card timeline-highlight">
+              <span class="timeline-number">2</span>
+              <p class="timeline-label">2º mês</p>
+              <strong>R$ 121,00</strong>
+              <small>R$ 110 + R$ 11</small>
+            </article>
+          </div>
+
+          <div class="comparison-note">
+            <div>
+              <span class="comparison-dot simple"></span>
+              <p>Nos juros simples, o segundo juro continuaria em R$ 10.</p>
+              <strong>Resultado: R$ 120,00</strong>
+            </div>
+            <div>
+              <span class="comparison-dot compound"></span>
+              <p>Nos compostos, o segundo juro é calculado sobre R$ 110.</p>
+              <strong>Resultado: R$ 121,00</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lab-section section-shell" id="laboratorio" aria-labelledby="titulo-laboratorio">
+        <div class="section-heading">
+          <p class="eyebrow">Laboratório interativo</p>
+          <h2 id="titulo-laboratorio">Mude os valores e acompanhe a curva</h2>
+          <p>
+            Compare o crescimento simples e composto usando uma taxa constante por período. A
+            simulação é educativa e não representa uma condição real de investimento ou crédito.
+          </p>
+        </div>
+
+        <div class="lab-grid">
+          <form class="simulator-controls" id="simulator-form">
+            <label for="capital-input">
+              <span>Capital inicial</span>
+              <output id="capital-output" for="capital-input">R$ 100,00</output>
+            </label>
+            <input id="capital-input" name="capital" type="range" min="10" max="10000" step="10" value="100" />
+
+            <label for="rate-input">
+              <span>Taxa por mês</span>
+              <output id="rate-output" for="rate-input">10,0%</output>
+            </label>
+            <input id="rate-input" name="rate" type="range" min="0" max="20" step="0.1" value="10" />
+
+            <label for="period-input">
+              <span>Prazo</span>
+              <output id="period-output" for="period-input">12 meses</output>
+            </label>
+            <input id="period-input" name="periods" type="range" min="1" max="60" step="1" value="12" />
+
+            <button class="button button-secondary" type="button" id="reset-simulator">Voltar ao exemplo</button>
+          </form>
+
+          <div class="simulator-results" aria-live="polite">
+            <div class="metric-grid">
+              <article class="metric-card metric-compound">
+                <small>Montante composto</small>
+                <strong id="compound-total">R$ 313,84</strong>
+                <span id="compound-interest">R$ 213,84 em juros</span>
+              </article>
+              <article class="metric-card metric-simple">
+                <small>Montante simples</small>
+                <strong id="simple-total">R$ 220,00</strong>
+                <span id="simple-interest">R$ 120,00 em juros</span>
+              </article>
+              <article class="metric-card metric-difference">
+                <small>Diferença entre eles</small>
+                <strong id="difference-total">R$ 93,84</strong>
+                <span>com os mesmos dados</span>
+              </article>
+            </div>
+
+            <div class="chart-panel">
+              <div class="chart-legend" aria-hidden="true">
+                <span><i class="legend-compound"></i> Compostos</span>
+                <span><i class="legend-simple"></i> Simples</span>
+              </div>
+              <canvas id="growth-chart" role="img" aria-label="Gráfico comparando a evolução dos juros simples e compostos"></canvas>
+              <p id="chart-summary" class="sr-only"></p>
+            </div>
+          </div>
+        </div>
+
+        <details class="period-details">
+          <summary>Ver evolução período a período</summary>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr><th>Mês</th><th>Juros simples</th><th>Juros compostos</th><th>Diferença</th></tr>
+              </thead>
+              <tbody id="period-table-body"></tbody>
+            </table>
+          </div>
+        </details>
+      </section>
+
+      <section class="factors-section" aria-labelledby="titulo-fatores">
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Quatro pontos importantes</p>
+            <h2 id="titulo-fatores">O resultado muda quando um destes fatores muda</h2>
+          </div>
+
+          <div class="factor-grid">
+            <article class="factor-card factor-mint">
+              <div class="factor-icon" aria-hidden="true">◷</div>
+              <span>1</span>
+              <h3>Tempo</h3>
+              <p>Quanto mais períodos, mais vezes o saldo é multiplicado por <b>1 + i</b>.</p>
+            </article>
+            <article class="factor-card factor-blue">
+              <div class="factor-icon" aria-hidden="true">❄</div>
+              <span>2</span>
+              <h3>Efeito bola de neve</h3>
+              <p>No começo a diferença parece pequena; depois, os próprios juros passam a gerar novos juros.</p>
+            </article>
+            <article class="factor-card factor-yellow">
+              <div class="factor-icon" aria-hidden="true">▣</div>
+              <span>3</span>
+              <h3>Dívidas</h3>
+              <p>Se a taxa é alta e o pagamento atrasa, o saldo pode crescer rapidamente.</p>
+            </article>
+            <article class="factor-card factor-green">
+              <div class="factor-icon" aria-hidden="true">↗</div>
+              <span>4</span>
+              <h3>Taxa de juros</h3>
+              <p>Uma pequena mudança na taxa, repetida por muitos períodos, altera bastante o resultado.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="motion-section" id="movimento" aria-labelledby="titulo-movimento">
+        <div class="section-shell motion-layout">
+          <div class="motion-copy">
+            <p class="eyebrow">Matemática em movimento</p>
+            <h2 id="titulo-movimento">Veja o crescimento ganhar profundidade</h2>
+            <p>
+              Cada camada representa um novo período. Nos juros compostos, o valor acumulado entra
+              novamente no cálculo — por isso a pilha não cresce sempre no mesmo ritmo.
+            </p>
+            <div class="motion-controls" role="group" aria-label="Controle da animação tridimensional">
+              <button class="button button-secondary" type="button" id="motion-toggle" aria-pressed="false">Pausar movimento</button>
+              <span>Mova o cursor sobre a cena para explorar o efeito 3D.</span>
+            </div>
+          </div>
+
+          <div class="compound-scene tilt-scene" data-tilt-scene aria-label="Representação tridimensional do crescimento composto">
+            <div class="scene-glow" aria-hidden="true"></div>
+            <div class="orbit orbit-one" aria-hidden="true"></div>
+            <div class="orbit orbit-two" aria-hidden="true"></div>
+            <div class="coin-stack" aria-hidden="true">
+              <i style="--level: 0"></i><i style="--level: 1"></i><i style="--level: 2"></i>
+              <i style="--level: 3"></i><i style="--level: 4"></i><i style="--level: 5"></i>
+              <i style="--level: 6"></i><i style="--level: 7"></i><i style="--level: 8"></i>
+              <i style="--level: 9"></i><i style="--level: 10"></i><i style="--level: 11"></i>
+            </div>
+            <div class="floating-formula formula-a" aria-hidden="true">C</div>
+            <div class="floating-formula formula-b" aria-hidden="true">1 + i</div>
+            <div class="floating-formula formula-c" aria-hidden="true">t</div>
+            <div class="scene-result">
+              <small>multiplicação repetida</small>
+              <strong>M = C(1 + i)<sup>t</sup></strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-shell official-example">
+          <div class="official-example-copy">
+            <p class="card-kicker">Exemplo oficial do Banco Central</p>
+            <h3>R$ 1.000 a 5% ao mês durante seis meses</h3>
+            <p>
+              Com juros simples, o saldo chega a R$ 1.300,00. Com juros compostos, chega a
+              R$ 1.340,10 porque cada mês parte do saldo anterior.
+              <a class="citation" href="#fonte-bcb-caderno" aria-label="Consultar fonte 1">[1]</a>
+            </p>
+            <div class="official-difference" aria-label="Ao final de seis meses, os juros compostos acumulam quarenta reais e dez centavos a mais">
+              <span>Diferença no 6º mês</span>
+              <strong>R$ 40,10 a mais</strong>
+              <small>com capitalização composta</small>
+            </div>
+          </div>
+          <div class="bar-stage tilt-scene" data-tilt-scene id="official-bar-stage" aria-label="Comparação animada, mês a mês, entre juros simples e compostos">
+            <div class="stage-hud" aria-hidden="true">
+              <span class="stage-kicker"><i></i> ciclo em movimento</span>
+              <span class="stage-month">Mês <strong id="official-month">6</strong> de 6</span>
+            </div>
+            <div class="stage-scale-note" aria-hidden="true">Saldo total · escala partindo de zero</div>
+            <div class="month-progress" aria-hidden="true">
+              <span class="is-active" data-official-month="0">0</span>
+              <span class="is-active" data-official-month="1">1</span>
+              <span class="is-active" data-official-month="2">2</span>
+              <span class="is-active" data-official-month="3">3</span>
+              <span class="is-active" data-official-month="4">4</span>
+              <span class="is-active" data-official-month="5">5</span>
+              <span class="is-active" data-official-month="6">6</span>
+            </div>
+            <p class="stage-insight" id="official-insight" aria-hidden="true">No sexto mês, a capitalização composta abre uma diferença de R$ 40,10.</p>
+            <div class="bar-3d bar-simple" id="official-simple-bar" style="--bar-height: 85.36%">
+              <span id="official-simple-value">R$ 1.300,00</span>
+              <b id="official-simple-interest">+ R$ 300,00</b>
+              <i>Simples</i>
+            </div>
+            <div class="bar-3d bar-compound is-finale" id="official-compound-bar" style="--bar-height: 88%">
+              <span id="official-compound-value">R$ 1.340,10</span>
+              <b id="official-compound-interest">+ R$ 340,10</b>
+              <i>Compostos</i>
+            </div>
+            <div class="rate-particles" aria-hidden="true">
+              <span style="--particle-delay: 0s; --particle-x: -12px">+5%</span>
+              <span style="--particle-delay: 1.4s; --particle-x: 18px">+5%</span>
+              <span style="--particle-delay: 2.8s; --particle-x: 2px">+5%</span>
+            </div>
+            <div class="bar-floor" aria-hidden="true"></div>
+            <button class="stage-replay" type="button" id="official-replay">Reiniciar ciclo</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="decisions-section section-shell" id="decisoes" aria-labelledby="titulo-decisoes">
+        <div class="section-heading">
+          <p class="eyebrow">Na prática</p>
+          <h2 id="titulo-decisoes">O mecanismo é o mesmo. A decisão muda o resultado.</h2>
+        </div>
+
+        <div class="help-hurt-grid">
+          <article class="decision-card decision-help">
+            <div class="decision-art" aria-hidden="true">🌱</div>
+            <div>
+              <p class="card-kicker">Quando ajuda</p>
+              <h3>Planejar, poupar e começar cedo</h3>
+              <p>
+                Quando há tempo, constância e uma escolha adequada ao objetivo, a capitalização pode
+                ajudar a formar reservas. Mas todo investimento envolve risco, liquidez e retorno —
+                não existe resultado garantido apenas por causa da fórmula.
+                <a class="citation" href="#fonte-cvm-risco" aria-label="Consultar fonte 3">[3]</a>
+              </p>
+              <ul>
+                <li>Defina um objetivo e um prazo.</li>
+                <li>Organize o orçamento antes de investir.</li>
+                <li>Compare risco, liquidez e retorno.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="decision-card decision-hurt">
+            <div class="decision-art" aria-hidden="true">🧾</div>
+            <div>
+              <p class="card-kicker">Quando atrapalha</p>
+              <h3>Comprar sem planejamento e atrasar pagamentos</h3>
+              <p>
+                Em dívidas, a mesma capitalização atua contra o orçamento. Antes de contratar crédito,
+                compare o valor total, as condições e o Custo Efetivo Total — que reúne juros, tarifas,
+                impostos e outras despesas.
+                <a class="citation" href="#fonte-bcb-cet" aria-label="Consultar fonte 4">[4]</a>
+              </p>
+              <ul>
+                <li>Compare preço à vista e total parcelado.</li>
+                <li>Não avalie apenas o valor da parcela.</li>
+                <li>Confira o CET antes de contratar.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="credit-checklist">
+          <h3>Antes de dizer “sim” a um parcelamento</h3>
+          <ol>
+            <li><span>1</span><div><b>Some tudo</b><small>parcela × quantidade de parcelas</small></div></li>
+            <li><span>2</span><div><b>Compare</b><small>preço à vista, taxa e CET</small></div></li>
+            <li><span>3</span><div><b>Teste o orçamento</b><small>a parcela cabe sem comprometer necessidades?</small></div></li>
+            <li><span>4</span><div><b>Planeje imprevistos</b><small>evite atrasos e juros adicionais</small></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="explore-section" aria-labelledby="titulo-explore">
+        <div class="section-shell explore-grid">
+          <article class="rule-card">
+            <p class="eyebrow">Curiosidade verificável</p>
+            <h2 id="titulo-explore">Regra de 72</h2>
+            <p>
+              Uma estimativa rápida para descobrir em quantos anos um valor pode dobrar: divida 72 pela taxa anual em porcentagem.
+              <a class="citation" href="#fonte-investor-rule72" aria-label="Consultar fonte 6">[6]</a>
+            </p>
+            <label for="rule-rate">Taxa anual estimada</label>
+            <div class="rule-control">
+              <input id="rule-rate" type="number" inputmode="decimal" min="0.1" max="50" step="0.1" value="9" />
+              <span>% ao ano</span>
+            </div>
+            <output id="rule-result" for="rule-rate">Aproximadamente 8 anos para dobrar.</output>
+            <small>É uma aproximação matemática, não uma garantia de retorno.</small>
+          </article>
+
+          <article class="myth-card">
+            <p class="eyebrow">Curiosidade com contexto</p>
+            <h2>E Einstein?</h2>
+            <blockquote>“Os juros compostos são a oitava maravilha do mundo.”</blockquote>
+            <p>
+              A frase é popularmente atribuída a Albert Einstein, mas não há registro confiável de que
+              ele a tenha dito. A ocorrência antiga conhecida vem de um anúncio bancário de 1925 sem
+              autor identificado.
+              <a class="citation" href="#fonte-quote" aria-label="Consultar fonte 7">[7]</a>
+            </p>
+            <span class="hand-note">A matemática é interessante mesmo sem uma autoria famosa.</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="quiz-section section-shell" aria-labelledby="titulo-quiz">
+        <div class="section-heading">
+          <p class="eyebrow">Teste seus conhecimentos</p>
+          <h2 id="titulo-quiz">Três perguntas rápidas</h2>
+        </div>
+        <div class="quiz" id="quiz">
+          <article class="quiz-question" data-answer="b">
+            <h3>1. Em juros compostos, a base do próximo período é…</h3>
+            <div class="quiz-options">
+              <button type="button" data-option="a">sempre o capital inicial.</button>
+              <button type="button" data-option="b">o saldo acumulado até aquele momento.</button>
+              <button type="button" data-option="c">apenas o total dos juros.</button>
+            </div>
+            <p class="quiz-feedback" aria-live="polite"></p>
+          </article>
+          <article class="quiz-question" data-answer="a">
+            <h3>2. Se a taxa é mensal, o tempo da fórmula deve estar em…</h3>
+            <div class="quiz-options">
+              <button type="button" data-option="a">meses.</button>
+              <button type="button" data-option="b">anos.</button>
+              <button type="button" data-option="c">qualquer unidade.</button>
+            </div>
+            <p class="quiz-feedback" aria-live="polite"></p>
+          </article>
+          <article class="quiz-question" data-answer="c">
+            <h3>3. Para comparar propostas de crédito, o indicador mais completo é…</h3>
+            <div class="quiz-options">
+              <button type="button" data-option="a">somente a taxa anunciada.</button>
+              <button type="button" data-option="b">somente o valor da parcela.</button>
+              <button type="button" data-option="c">o Custo Efetivo Total.</button>
+            </div>
+            <p class="quiz-feedback" aria-live="polite"></p>
+          </article>
+        </div>
+        <div class="quiz-score" id="quiz-score" aria-live="polite">Responda às três perguntas para ver sua pontuação.</div>
+      </section>
+
+      <section class="sources-section" id="fontes" aria-labelledby="titulo-fontes">
+        <div class="section-shell">
+          <div class="section-heading section-heading-light">
+            <p class="eyebrow">Fontes e metodologia</p>
+            <h2 id="titulo-fontes">Informação que pode ser conferida</h2>
+            <p>
+              O conteúdo foi ampliado a partir do cartaz escolar e revisado com materiais oficiais e
+              educacionais. Links consultados em 4 de novembro de 2026.
+            </p>
+          </div>
+
+          <ol class="source-list">
+            <li id="fonte-bcb-caderno">
+              <span>1</span>
+              <div>
+                <b>Banco Central do Brasil — Caderno de Educação Financeira</b>
+                <p>Definição, comparação entre juros simples e compostos e efeito do tempo.</p>
+                <a href="https://www.bcb.gov.br/pre/pef/port/caderno_cidadania_financeira.pdf" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+              </div>
+            </li>
+            <li id="fonte-bcb-olitef">
+              <span>2</span>
+              <div>
+                <b>Banco Central do Brasil — OLITEF 2024 · Caderno dos Professores</b>
+                <p>Fórmula, exemplos didáticos e crescimento exponencial.</p>
+                <a href="https://www.bcb.gov.br/content/config/aprendervalor/docs_aprender_valor/OLITEF_2024_CADERNO_PROFESSORES_VFinal.pdf" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+              </div>
+            </li>
+            <li id="fonte-cvm-risco">
+              <span>3</span>
+              <div>
+                <b>Portal do Investidor / CVM — Risco e relação risco × retorno</b>
+                <p>Investimentos envolvem risco; retorno esperado não é garantia.</p>
+                <a href="https://www.gov.br/investidor/pt-br/investir/antes-de-investir/entenda-as-caracteristicas-dos-investimentos/risco-e-a-relacao-risco-x-retorno" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+              </div>
+            </li>
+            <li id="fonte-bcb-cet">
+              <span>4</span>
+              <div>
+                <b>Banco Central do Brasil — Cuidados ao contratar crédito</b>
+                <p>Custo Efetivo Total e comparação de propostas.</p>
+                <a href="https://www.bcb.gov.br/meubc/faqs/p/cuidados-na-hora-de-contratar-uma-operacao-de-credito" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+              </div>
+            </li>
+            <li id="fonte-cvm-educacao">
+              <span>5</span>
+              <div>
+                <b>CVM — Política de Educação Financeira</b>
+                <p>Decisões financeiras conscientes, proteção e bem-estar financeiro.</p>
+                <a href="https://www.gov.br/investidor/pt-br/educacional/politica-de-educacao-financeira" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+              </div>
+            </li>
+            <li id="fonte-investor-rule72">
+              <span>6</span>
+              <div>
+                <b>Investor.gov / SEC — What is compound interest?</b>
+                <p>Exemplo de capitalização e Regra de 72 para estudantes.</p>
+                <a href="https://www.investor.gov/additional-resources/information/youth/teachers-classroom-resources/what-compound-interest" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+              </div>
+            </li>
+            <li id="fonte-quote">
+              <span>7</span>
+              <div>
+                <b>Quote Investigator — origem da frase da “oitava maravilha”</b>
+                <p>Investigação documental da atribuição popular a Einstein.</p>
+                <a href="https://quoteinvestigator.com/2019/09/09/interest/" target="_blank" rel="noopener noreferrer">Abrir pesquisa histórica</a>
+              </div>
+            </li>
+            <li id="fonte-openstax">
+              <span>8</span>
+              <div>
+                <b>OpenStax — Compound Interest</b>
+                <p>Equações, exemplos e relação entre taxa, prazo e frequência.</p>
+                <a href="https://openstax.org/books/contemporary-mathematics/pages/6-4-compound-interest" target="_blank" rel="noopener noreferrer">Abrir livro didático aberto</a>
+              </div>
+            </li>
+          </ol>
+
+          <div class="source-tools">
+            <a href="https://www.bcb.gov.br/acessoinformacao/calculadoradocidadao?hidemenu=true" target="_blank" rel="noopener noreferrer">Calculadora do Cidadão · BCB</a>
+            <a href="https://www.gov.br/investidor/pt-br/ferramentas/calculadora-do-investidor" target="_blank" rel="noopener noreferrer">Calculadora do Investidor · CVM</a>
+            <a href="https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator" target="_blank" rel="noopener noreferrer">Compound Interest Calculator · Investor.gov</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-shell footer-grid">
+        <div>
+          <strong>Juros Compostos na Prática</strong>
+          <p>Projeto educativo de Matemática · 1º Ano C · Ensino Médio</p>
+        </div>
+        <p class="footer-note">
+          Conteúdo educativo. As simulações usam taxas constantes e não representam promessa de
+          rendimento, recomendação de investimento ou oferta de crédito.
+        </p>
+        <a href="#topo">Voltar ao topo ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>
+
+
