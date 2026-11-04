@@ -4,12 +4,16 @@ Site educativo e interativo sobre juros compostos, desenvolvido como ampliação
 
 O site preserva os conceitos, a fórmula, o exemplo de R$ 100 a 10% ao mês, os quatro fatores principais e a reflexão sobre usos positivos e negativos presentes no cartaz original. As partes interativas são ampliações didáticas identificadas como conteúdo educativo.
 
-## Estrutura
+## Arquivos publicados
 
-- `dist/index.html`: conteúdo e estrutura semântica
-- `dist/styles.css`: identidade visual responsiva
-- `dist/app.js`: simulador, gráficos, ciclo animado de seis meses, Regra de 72 e quiz
-- `.openai/hosting.json`: configuração de publicação no Sites
+- `index.html`: conteúdo e estrutura semântica
+- `styles.css`: identidade visual responsiva e movimentos 3D
+- `app.js`: simulador, gráficos, ciclo animado de seis meses, Regra de 72 e quiz
+- `.nojekyll`: publicação direta pelo GitHub Pages
+
+## Site
+
+https://mgtour360graus.github.io/juros-compostos-na-pratica/
 
 ## Recursos
 
